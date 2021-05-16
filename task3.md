@@ -132,7 +132,7 @@ avg2=$($SHOW Evaluation_Sheet2.csv|$MATCH -i Average|$SCAN -F"Average" '{print $
 func $LINENO "[SUCCESS] Counted column no. of [_Average_ in sheet2="$f2"]">> $Pwd/Scriptlogs.log        #storing logs in specified >> filename
   
 
- # The Above Function will match the name and average in the respective addressed sheet and count the number of commas before that               Particular found column and add +1 to get the exact column number in the sheet.Here name1,name2 and avg1,avg2 will count the                  commas with addition of +1 using variable add1. Further count1,count2 will store column no. of Intern name and count3,count4                  will store column no. of Average.   
+The Above Function will match the name and average in the respective addressed sheet and count the number of commas before that               Particular found column and add +1 to get the exact column number in the sheet.Here name1,name2 and avg1,avg2 will count the                  commas with addition of +1 using variable add1. Further count1,count2 will store column no. of Intern name and count3,count4                  will store column no. of Average.   
 
 #------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -145,7 +145,7 @@ $SCAN -v "col3=$count2" -v "col4=$count4" -v "start=$Firstrow" -v "end=$Lastrow"
 func $LINENO  "[SUCCESS]: Extracted Name, Sum, Column from sheet2 and stored to "$Pwd"/"$DIR" as (Output_of_Sheet)">> $Pwd/Scriptlogs.log    #storing logs in specified >> filename
 
  
- # AWK Command is used to Display the output with desired 2nd(Intern name) & 11th(Average) column & calculating the sum.                         -F is used here as field seperator(,) for each record and NR is used to Extract the data which is required i.e,                                  it's printing the no. of records between 4th to 24th or 26th to Extract and display the records lying within it.                              Further redirecting the output using > operator and append >> operator to the desired file name. 
+AWK Command is used to Display the output with desired 2nd(Intern name) & 11th(Average) column & calculating the sum.                         -F is used here as field seperator(,) for each record and NR is used to Extract the data which is required i.e,                                  it's printing the no. of records between 4th to 24th or 26th to Extract and display the records lying within it.                              Further redirecting the output using > operator and append >> operator to the desired file name. 
 #--------------------------------------------------------------------------------------------------------------------------------------------  
 $SHOW Output_of_sheet.csv                                                     # Used to Display the output of sheets to the terminal
 func $LINENO "[SUCCESS] Output generated to terminal ">> $Pwd/Scriptlogs.log     #storing logs in specified >> filename
