@@ -30,12 +30,14 @@
 <details>
   <summary> Test Cases </summary>
   
-|S.NO|Test Cases|Test Case Description|Expected Result|Test Status|Output|
-|:----:|:-----:|:-----:|:-----:|:-----:|:----:|
-|1|**Published Url** |First of all, i used publish to the web option to publish a spreadsheet link and select the .csv format |Url should be published|**PASS** |![webpubleshed](https://user-images.githubusercontent.com/82143335/117056330-d26c8300-ad39-11eb-8232-a9609f1167f8.PNG)|
-|2|**The path of commands  is declared in Variable** |I declared the path of commands in variables in the configuration file which i used in my script file. |Path of command should be declare in the variable |**PASS** |![variables](https://user-images.githubusercontent.com/82143335/117057021-95ed5700-ad3a-11eb-9253-faa5df8ca109.PNG)|
-|3|**Google spread sheet downloaded in CSV format** |I used wget with -q option with url of the google spread sheet to download in csv format -q option is used for silently downloaded <br/> I used this $WGET $WGETOPT1 $MYURL111 and $MYURL222 the value of these variable extracting from the configuration file |Google spreadsheet in csv format should be downloaded |**PASS** | ![csv formate](https://user-images.githubusercontent.com/82143335/117057486-24fa6f00-ad3b-11eb-8236-6796b3b96303.PNG) |
-  
+|Test Cases|Test Case Description|Steps Performed| Test Status|Output
+|:----:|:-----:|:-----:|:-----:|:-----:|
+|Test Case 1| **WEB PUBLISHING** <br/> | A Copy of Spreadsheet's link has been published to web using *Publish to web* option from **File menu** of spreadsheet opting the CSV mode | PASS |![](https://raw.githubusercontent.com/somgithub111/test/master/Screenshot%20from%202021-04-19%2023-55-40.png) <br/> |
+|Test Case 2| **DECLARING PATHS IN VARIABLES** <br/> | MKDIR=/usr/bin/mkdir <br/> RENAME=/usr/bin/mv <br/> ECHO=/usr/bin/echo <br/> SHOW=/usr/bin/cat <br/> DOWNLOAD=/usr/bin/wget <br/><br/> **Note: Do not use root user to operate**| PASS | ![](https://raw.githubusercontent.com/somgithub111/test/master/Screenshot%20from%202021-04-20%2009-19-11.png) |
+|Test Case 3| **DOWNLOAD THE LINK SILENTLY** <br/> | Using $wget to call _wget_ from stored path in variable and to download quietly we have used _$wget -q_ (now downloading process is quietly running as hidden mode) and $ECHO is used to display the confirmation of downloaded link.| PASS | ![](https://raw.githubusercontent.com/somgithub111/test/master/Screenshot%20from%202021-04-20%2010-00-26.png) |
+|Test Case 4| **RENAME CSV FILE AND STORE** <br/>| $RENAME is used to call the *mv* command from it's path and renaming and storing the output file to newly created directory.Output can be visible as shown in the image at the Right-End |PASS|![](https://raw.githubusercontent.com/somgithub111/test/master/Screenshot%20from%202021-04-20%2010-09-57.png) |
+  |Test Case 5| **DISPLAY THE FIXATION OUTPUT** <br/> | It limits the region of output display between 4 to 26. The issue is Fixed now and the Output is Structured correctly. |PASS| ![](https://raw.githubusercontent.com/somgithub111/test/master/Screenshot%20from%202021-04-20%2011-32-19.png) |
+|Test Case 6| **STORING AND DISPLAY THE OUTPUT** <br/> | Used Redirectional operator at the End of awk Extracted File to store its values to Output_  <br/>awk 'function' Evaluation_of_sheet1.csv > Output_of_sheet1.csv and following the same for sheet2 to store in same directory Evaluation_DIR<br/> Display output at terminal using $SHOW using cat command's path:<br/> $SHOW Output_of_sheet1.csv <br/> $SHOW Output_of_sheet2.csv. |PASS| ![](https://raw.githubusercontent.com/somgithub111/test/master/Screenshot%20from%202021-04-20%2011-57-32.png) |
   </details>
   
   <details>
